@@ -1,4 +1,3 @@
-
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -28,7 +27,7 @@ class Rooms extends CI_Controller {
 			$data['content']		= 'back/Rooms/form';
 			$data['rows'] 		=$this->obj->get_single_row($id);
 			$data['roomtypes']      = $this->obj->get_type();
-			
+
 			$this->load->view('_layout_admin',$data);
 		}
 	function detail($id)
