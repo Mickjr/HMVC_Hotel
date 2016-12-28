@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Hotel Services| Home</title>
 <link rel="shortcut icon" href="<?php echo base_url('assets/images/logo.png'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/font-awesome-4.4.0/css/font-awesome.css'); ?>">

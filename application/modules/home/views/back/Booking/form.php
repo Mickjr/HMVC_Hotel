@@ -1,4 +1,3 @@
-
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.validate.js'); ?>"></script>
 
 <div class="col-lg-12 main-chart">
@@ -7,7 +6,7 @@
 	<div class="box box-info col-md-12 thumbnail">
 		<!-- /.box-header -->
 		<form class="form-horizontal row-border form_validation" id="form_validation" action="<?php echo base_url('roomtypes/save'); ?>" method="post">
-			<div class="box-body pad">	
+			<div class="box-body pad">
             	<div class="form-group">
               		<label class="col-md-2 control-label">Customer Name <em>*</em> : </label>
               		<div class="col-md-9">
@@ -18,7 +17,7 @@
                       <?php } ?>
                 		</select>
               		</div>
-            	</div>   
+            	</div>
               <div class="form-group">
                   <label class="col-md-2 control-label">Type Name <em>*</em> : </label>
                   <div class="col-md-9">
@@ -29,7 +28,7 @@
                       <?php } ?>
                     </select>
                   </div>
-              </div>    
+              </div>
               <div class="form-group">
                   <label class="col-md-2 control-label">Guest <em>*</em> : </label>
                   <div class="col-md-9">
@@ -40,7 +39,7 @@
                       <?php } ?>
                     </select>
                   </div>
-              </div>      
+              </div>
               <div class="form-group">
                   <label class="col-md-2 control-label">Room Name <em>*</em> : </label>
                   <div class="col-md-9">
@@ -63,13 +62,13 @@
             <label for="datestart" class="col-sm-2 control-label">Date Start<em>*</em></label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="datestart" name="datestart" data-rule-required="true" data-msg-required="This field is required" placeholder="Enter Date Start" value="<?php echo @$rows[0]->datestart; ?>">
-            </div>            
-          </div>        
+            </div>
+          </div>
           <div class="form-group">
             <label for="dateend" class="col-sm-2 control-label">Date End<em>*</em></label>
             <div class="col-sm-9">
               <input type="text" class="form-control" id="dateend" data-rule-required="true" data-msg-required="This field is required" name="dateend" placeholder="Enter Date End" value="<?php echo @$rows[0]->date_end; ?>">
-            </div>  
+            </div>
           </div>
 				</div>
       <div class="box-footer">
@@ -107,7 +106,7 @@
           checkin.hide();
           $('#dateend')[0].focus();
       }).data('datepicker');
-      
+
       var checkout = $('#dateend').datepicker({
         format: 'yyyy/mm/dd',
           onRender: function(date) {
@@ -115,14 +114,12 @@
           }
       }).on('changeDate', function(ev) {
           checkout.hide();
-      }).data('datepicker');  
+      }).data('datepicker');
       //-----------End Date Rang ----------
-      $('#timestart').timepicker({showMeridian: false});  
+      $('#timestart').timepicker({showMeridian: false});
       $('#timeend').timepicker({showMeridian: false});
   //Validation form
       $("#form_validation").validate();
   });
 
   </script>
-
-

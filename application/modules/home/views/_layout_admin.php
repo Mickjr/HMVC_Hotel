@@ -4,9 +4,9 @@
 	<meta charset="utf-8">
 	<title>Hotel Service</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+  <meta name="description" content="">
+  <meta name="author" content="Dashboard">
+  <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
 	<link rel="shortcut icon" href="<?php echo base_url('assets/images/logo.png'); ?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/font-awesome-4.4.0/css/font-awesome.css'); ?>">
@@ -38,11 +38,11 @@
   <script type="text/javascript" src="<?php echo base_url('assets/js/zabuto_calendar.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/datepickertime/bootstrap-datepicker.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/datepickertime/bootstrap-timepicker.min.js'); ?>"></script>
-  
+
   <style type="text/css">
       div.DTTT { margin-bottom: 0.5em; float: right; }
       div.dataTables_wrapper { clear: both; }
-      
+
   </style>
 
 </head>
@@ -57,7 +57,7 @@
             <!--logo end-->
         </header>
       <!--header end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN SIDEBAR MENU
       *********************************************************************************************************************************************************** -->
@@ -66,7 +66,7 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <div class="empty">
-              	
+
               </div>
               <ul class="navmenu">
 		        <li id="menuadmin" class="active" style="width: 100%"><a href=" <?php echo base_url('dashboard'); ?>" target="" class="text-left menupaddingleft"> <i class="fa fa-dashboard"> </i> Dashoard</a></li>
@@ -85,7 +85,7 @@
           </div>
       </aside>
       <!--sidebar end-->
-      
+
       <!-- **********************************************************************************************************************************************************
       MAIN CONTENT
       *********************************************************************************************************************************************************** -->
@@ -97,9 +97,9 @@
                 <?php $this->load->view($content); ?>
       <!-- **********************************************************************************************************************************************************
       RIGHT SIDEBAR CONTENT
-      *********************************************************************************************************************************************************** -->                  
-                  
-                  
+      *********************************************************************************************************************************************************** -->
+
+
               </div><!--/row -->
           </section>
       </section>
@@ -135,7 +135,7 @@
  //          }
  //        });
     </script>
-  
+
   <script type="application/javascript">
         $(document).ready(function () {
 
@@ -144,7 +144,7 @@
             $("#date-popover").click(function (e) {
                 $(this).hide();
             });
-        
+
             $("#my-calendar").zabuto_calendar({
                 action: function () {
                     return myDateFunction(this.id, false);
@@ -167,7 +167,7 @@
 		    $('#example').DataTable();
 		} );
         // --------------------------end datable-----------------
-        
+
         function myNavFunction(id) {
             $("#date-popover").hide();
             var nav = $("#" + id).data("navigation");

@@ -1,4 +1,3 @@
-
 <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.validate.js'); ?>"></script>
 
 <div class="col-lg-12 main-chart">
@@ -7,26 +6,26 @@
 	<div class="box box-info col-md-12 thumbnail">
 		<!-- /.box-header -->
 		<form class="form-horizontal row-border form_validation" id="form_validation" action="<?php echo base_url('rooms/save'); ?>" method="post">
-			<div class="box-body pad">	    
+			<div class="box-body pad">
               <div class="form-group">
                   <label class="col-md-2 control-label">Room Name <em>*</em> : </label>
                   <div class="col-md-9">
                 <input type="hidden" value="<?php echo @$rows[0]->rid; ?>" name="roomid">
                     <input name="roomname" class="form-control" type="text" value="<?php echo @$rows[0]->rname; ?>" placeholder="Please enter room name"  data-rule-required="true" data-msg-required="Enter the room Name.">
                   </div>
-              </div>      
+              </div>
               <div class="form-group">
                   <label class="col-md-2 control-label">Bed Number<em>*</em> : </label>
                   <div class="col-md-9">
                     <input name="bednumber" class="form-control" type="text" value="<?php echo @$rows[0]->bed; ?>" placeholder="Please enter bed number"  data-rule-required="true" data-msg-required="Enter the bed number.">
                   </div>
-              </div>      
+              </div>
               <div class="form-group">
                   <label class="col-md-2 control-label">Price <em>*</em> : </label>
                   <div class="col-md-9">
                     <input name="price" class="form-control" type="text" value="<?php echo @$rows[0]->price; ?>" placeholder="Please enter price"  data-rule-required="true" data-msg-required="Enter the price.">
                   </div>
-              </div>  		
+              </div>
             	<div class="form-group">
               		<label class="col-md-2 control-label">Type Name <em>*</em> : </label>
               		<div class="col-md-9">
@@ -46,11 +45,11 @@
             	<div class="form-group">
                   <label for="short_description" class="col-sm-2 control-label">Photo</label>
                   <div class="col-sm-10">
-                      <div class="row">         
+                      <div class="row">
                         <div class="col-xs-6 col-md-3">
                             <div id="wrapper-tmp_logo">
-                              <?php                   
-                                $path = isset($rows[0]->iconpath)? "assets/uploads/rooms/".@$rows[0]->iconpath:''; 
+                              <?php
+                                $path = isset($rows[0]->iconpath)? "assets/uploads/rooms/".@$rows[0]->iconpath:'';
                                 $serverPath = $path;
 
                               ?>
@@ -66,13 +65,13 @@
                             <?php echo $img; ?>
                           </div>
                         </div>
-                      </div>        
+                      </div>
                     <br>
                     <div class="clearfix"></div>
-                    <a id="btn-gallery1" href="#" class="btn btn-info browse btn-sm" data-pro="tmp_logo" style="vertical-align: top;" onclick="return false;"> 
+                    <a id="btn-gallery1" href="#" class="btn btn-info browse btn-sm" data-pro="tmp_logo" style="vertical-align: top;" onclick="return false;">
                         <i class="glyphicon glyphicon-folder-close"></i> Browse
-                        <img id="ajax-tmp_logo" style="display:none;" src="<?php echo base_url('assets/images/progress-small.gif'); ?>">     
-                    </a>            
+                        <img id="ajax-tmp_logo" style="display:none;" src="<?php echo base_url('assets/images/progress-small.gif'); ?>">
+                    </a>
                   <a href="javascript:void(0);" class="btn btn-primary btn-remove btn-sm" style="vertical-align: top;" data-field="iconpath" data-path="<?php echo $serverPath; ?>"  data-tmp="hidden_tmp_logo">
                         <i class="glyphicon glyphicon-remove-sign"></i> Remove
                   </a><br><br>
@@ -89,7 +88,7 @@
             </div>
           </div>
   			</div>
-  			
+
   			<input type="hidden" name="exist_tmp_logo" value="<?php echo @$rows[0]->iconpath; ?>">
 			<input type="hidden" name="tmp_logo" value="<?php echo @$rows[0]->iconpath; ?>" id="hidden_tmp_logo">
   		</form>
@@ -112,7 +111,7 @@
     $('.browse').click(function(){
       var fileId = $(this).attr('data-pro');
       $('#hidden-file-id').val(fileId);
-      $('#file').click(); 
+      $('#file').click();
     });
     $('input[type="file"]').change(function(){
       $(this).parent().submit();
@@ -122,15 +121,15 @@
       var fileName  =   $(this).find('#hidden-file-id').val();
       // var ldata=$(this).find('#file').val();
       // console.log(fileName);
-      
+
       $(this).ajaxSubmit({
           dataType:'json',
           success:function(data) {
-          /*$('#'+ajaxLoaderId).hide(); */ 
+          /*$('#'+ajaxLoaderId).hide(); */
           //alert("hello");
         },
         complete: function(response) {
-          var rp = $.parseJSON (response.responseText);   
+          var rp = $.parseJSON (response.responseText);
 
           if(rp.error==false){
             var tmpId  = rp.tmp_name;
@@ -139,11 +138,11 @@
             /*var countImage = $('#wrapper-'+tmpId).find('img.img-poster').length;
             console.log("count:"+countImage);
             if(countImage==0){
-              var image =$('<img class="img-thumbnail" src="'+rp.file_name+'">'); 
+              var image =$('<img class="img-thumbnail" src="'+rp.file_name+'">');
               console.log(image);
-              console.log(tmpId); 
+              console.log(tmpId);
               $('#wrapper-'+tmpId).find('.img-thumbnail').remove();
-              
+
               $('#wrapper-'+tmpId).find('.clearfix').before(image);
             } else {
               $('#wrapper-'+tmpId).find('.img-thumbnail').attr('src',rp.file_name);
@@ -151,16 +150,16 @@
             //$('#ajax-'+fileName).hide();
             $('.btn-remove').attr('data-path',"assets/uploads/rooms/"+rp.file_path);
           }else {
-            //show_notification(rp.errorMsg); 
+            //show_notification(rp.errorMsg);
           }
           //$('#ajax-'+fileName).hide();
         },
         error:function(error){
           //$('#ajax-'+fileName).hide();
-        }    
+        }
           });
     });
-    var confirmMessage = 'Are you sure ?';  
+    var confirmMessage = 'Are you sure ?';
     $('.btn-remove').click(function(){
       var fieldName = $(this).attr('data-field');
       var path    = $(this).attr('data-path');
@@ -174,13 +173,13 @@
         var count = $(that).parent().find('div.img-thumbnail').length;
         if(count==0)
         {
-          $(that).parent().find('#wrapper-tmp_logo').append(noImage); 
+          $(that).parent().find('#wrapper-tmp_logo').append(noImage);
         }
       }
       if(confirm(confirmMessage)) {
-        clearImageData(); 
+        clearImageData();
       }
-    }); 
+    });
 
   //Validation form
       $("#form_validation").validate();
